@@ -9,7 +9,7 @@
         id="shipToDifferentAddress"
       >
     </div>
-    <div v-show="option.shipToDifferentAddress">
+    <div v-if="option.shipToDifferentAddress">
       <label for="shippingAddress">Shipping Address</label>
       <input
         type="text"
@@ -22,8 +22,11 @@
   </div>
 </template>
 <script>
+  import NestedValidator from '../mixins/NestedValidator';
+
   export default {
     name: 'option-form',
+    mixins: [NestedValidator],
     props: [
       'option',
     ],
