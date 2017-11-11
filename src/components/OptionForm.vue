@@ -5,17 +5,17 @@
       <input
         type="checkbox"
         name="shipToDifferentAddress"
-        v-model="shipToDifferentAddress"
+        v-model="option.shipToDifferentAddress"
         id="shipToDifferentAddress"
       >
     </div>
-    <div v-show="shipToDifferentAddress">
+    <div v-show="option.shipToDifferentAddress">
       <label for="shippingAddress">Shipping Address</label>
       <input
         type="text"
         name="shippingAddress"
         id="shippingAddress"
-        v-model="shippingAddress"
+        v-model="option.shippingAddress"
         v-validate="'required'"
       >
     </div>
@@ -23,10 +23,9 @@
 </template>
 <script>
   export default {
-    name: 'shipping-form',
+    name: 'option-form',
     props: [
-      'shipToDifferentAddress',
-      'shippingAddress',
+      'option',
     ],
   };
 </script>

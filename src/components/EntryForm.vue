@@ -1,15 +1,7 @@
 <template>
   <form action="">
-    <member-form
-      :name="name"
-      :email="email"
-      :tel="tel"
-      :address="address"
-    ></member-form>
-    <shipping-form
-      :ship-to-different-address="shipToDifferentAddress"
-      :shipping-address="shippingAddress"
-    ></shipping-form>
+    <member-form :member="member"></member-form>
+    <option-form :option="option"></option-form>
     <div v-show="errors.any()">
       <p v-for="error in errors.collect()">{{ error }}</p>
     </div>
@@ -19,22 +11,26 @@
 <script>
   /* eslint-disable no-console */
   import MemberForm from './MemberForm';
-  import ShippingForm from './ShippingForm';
+  import OptionForm from './OptionForm';
 
   export default {
     name: 'entry-form',
     components: {
       MemberForm,
-      ShippingForm,
+      OptionForm,
     },
     data() {
       return {
-        name: '',
-        email: '',
-        tel: '',
-        address: '',
-        shipToDifferentAddress: false,
-        shippingAddress: '',
+        member: {
+          name: '',
+          email: '',
+          tel: '',
+          address: '',
+        },
+        option: {
+          shipToDifferentAddress: false,
+          shippingAddress: '',
+        },
       };
     },
     methods: {

@@ -6,7 +6,7 @@
         type="text"
         name="name"
         id="name"
-        v-model="name"
+        v-model="member.name"
         v-validate="'required'"
       >
     </div>
@@ -16,7 +16,7 @@
         type="email"
         name="email"
         id="email"
-        v-model="email"
+        v-model="member.email"
         v-validate="'required|email'"
       >
     </div>
@@ -26,7 +26,7 @@
         type="tel"
         name="tel"
         id="tel"
-        v-model="tel"
+        v-model="member.tel"
         v-validate="'required'"
       >
     </div>
@@ -36,7 +36,7 @@
         type="text"
         name="address"
         id="address"
-        v-model="address"
+        v-model="member.address"
         v-validate="'required'"
       >
     </div>
@@ -46,10 +46,7 @@
   export default {
     name: 'member-form',
     props: [
-      'name',
-      'email',
-      'tel',
-      'address',
+      'member',
     ],
   };
 </script>
