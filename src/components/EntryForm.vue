@@ -10,7 +10,6 @@
 </template>
 <script>
   /* eslint-disable no-console */
-  import EventBus from '../EventBus';
   import MemberForm from './MemberForm';
   import OptionForm from './OptionForm';
 
@@ -36,10 +35,7 @@
     },
     methods: {
       submit() {
-        this.errors.clear();
         this.$validator.validateAll();
-        EventBus.$emit('validate', this.errors);
-
         if (this.errors.any()) {
           console.log('cancel submission');
         } else {

@@ -22,11 +22,9 @@
   </div>
 </template>
 <script>
-  import NestedValidator from '../mixins/NestedValidator';
-
   export default {
     name: 'option-form',
-    mixins: [NestedValidator],
+    inject: ['$validator'],
     props: [
       'option',
     ],

@@ -43,11 +43,9 @@
   </div>
 </template>
 <script>
-  import NestedValidator from '../mixins/NestedValidator';
-
   export default {
     name: 'member-form',
-    mixins: [NestedValidator],
+    inject: ['$validator'],
     props: [
       'member',
     ],
